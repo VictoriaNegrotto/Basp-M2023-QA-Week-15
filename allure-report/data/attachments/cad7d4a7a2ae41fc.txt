@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "#checkout_summary_container > div > div.summary_info"
-}
