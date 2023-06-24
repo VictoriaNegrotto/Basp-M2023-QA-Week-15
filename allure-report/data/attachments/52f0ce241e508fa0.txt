@@ -1,0 +1,5 @@
+{
+  "error": "no such element",
+  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#cart_contents_container > div > div.cart_list > div.cart_item\"}\n  (Session info: chrome=114.0.5735.134)",
+  "stacktrace": "Backtrace:\n\tGetHandleVerifier [0x00E8A813+48355]\n\t(No symbol) [0x00E1C4B1]\n\t(No symbol) [0x00D25358]\n\t(No symbol) [0x00D509A5]\n\t(No symbol) [0x00D50B3B]\n\t(No symbol) [0x00D7E232]\n\t(No symbol) [0x00D6A784]\n\t(No symbol) [0x00D7C922]\n\t(No symbol) [0x00D6A536]\n\t(No symbol) [0x00D482DC]\n\t(No symbol) [0x00D493DD]\n\tGetHandleVerifier [0x010EAABD+2539405]\n\tGetHandleVerifier [0x0112A78F+2800735]\n\tGetHandleVerifier [0x0112456C+2775612]\n\tGetHandleVerifier [0x00F151E0+616112]\n\t(No symbol) [0x00E25F8C]\n\t(No symbol) [0x00E22328]\n\t(No symbol) [0x00E2240B]\n\t(No symbol) [0x00E14FF7]\n\tBaseThreadInitThunk [0x764B00C9+25]\n\tRtlGetAppContainerNamedObjectPath [0x77157B4E+286]\n\tRtlGetAppContainerNamedObjectPath [0x77157B1E+238]\n"
+}
