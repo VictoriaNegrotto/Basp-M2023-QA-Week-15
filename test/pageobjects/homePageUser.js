@@ -1,4 +1,4 @@
-class userHomePage {
+class UserHomePage {
 
     async loginform (username, password) {
         await this.userNameInput.setValue(username);
@@ -56,7 +56,7 @@ class userHomePage {
     }
 
     get containDescription (){
-        return $('#item_4_title_link');
+        return $('#checkout_summary_container > div > div.cart_list > div.cart_item');
     }
 
     get checkoutButton (){
@@ -88,7 +88,8 @@ class userHomePage {
     }
 
     get summaryCheckout (){
-        return $('#checkout_summary_container > div > div.summary_info');
+        return $('#checkout_summary_container');
+
     }
 
     get finishButton (){
@@ -118,15 +119,38 @@ class userHomePage {
     get cartDescribeTshirt(){
         return $('#cart_contents_container > div > div.cart_list > div.cart_item');
     }
-    
+
     get continueShoppingButton(){
         return $('#continue-shopping');
     }
 
-    get scrollFooter(){
+    get footer(){
         return $('#page_wrapper > footer');
     }
 
+    get addToCartOnesietButton(){
+        return $('#add-to-cart-sauce-labs-onesie');
+    }
+
+    get cartDescribeList(){
+        return $('#cart_contents_container > div > div.cart_list');
+    }
+
+    get twitterButton(){
+        return $('#page_wrapper > footer > ul > li.social_twitter');
+    }
+
+    get SauceDemo(){
+        return $('https://www.saucedemo.com/inventory.html');
+    }
+
+    get alertErrorCheckout(){
+        return $('#checkout_info_container > div > form > div.checkout_info > div.error-message-container.error > h3');
+    }
+
+    get alertErrorCheckoutButton(){
+        return $('#checkout_info_container > div > form > div.checkout_info > div.error-message-container.error > h3 > button');
+    }
     async checkoutForm (firstname, lastname, postalcode) {
         await this.inputFirstName.setValue(firstname);
         await this.inputLastName.setValue(lastname);
@@ -195,6 +219,18 @@ class userHomePage {
     async continueShoppingButtonClick() {
         await this.continueShoppingButton.click();
     }
+
+    async addToCartOnesietButtonClick(){
+        await this.addToCartOnesietButton.click();
+    }
+
+    async twitterButtonClick(){
+        await this.twitterButton.click();
+    }
+
+    async alertErrorCheckoutButtonClick(){
+        await this.alertErrorCheckoutButton.click();
+    }
 }
 
-export default new userHomePage();
+export default new UserHomePage();

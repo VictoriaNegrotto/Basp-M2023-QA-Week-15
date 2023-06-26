@@ -1,4 +1,4 @@
-class loginPage {
+class LoginPage {
 
     get userNameInput () {
         return $('#user-name')
@@ -49,4 +49,4 @@ class loginPage {
     }
 }
 
-export default new loginPage();
+export default new LoginPage();

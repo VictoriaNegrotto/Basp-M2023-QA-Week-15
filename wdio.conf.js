@@ -7,7 +7,7 @@ export const config = {
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
-    
+
     //
     // ==================
     // Specify Test Files
@@ -59,7 +59,7 @@ export const config = {
     capabilities: [{
         // capabilities for local browser web tests
         browserName: 'chrome', 'goog:chromeOptions': {
-            args: ['headless', 'disable-gpu']
+            //args: ['headless', 'disable-gpu']
         } // or "firefox", "microsoftedge", "safari"
     }],
     //
@@ -148,7 +148,7 @@ export const config = {
             // do something
         }
     },
-    
+
     //
     // =====
     // Hooks

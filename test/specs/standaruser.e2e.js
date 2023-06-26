@@ -1,6 +1,5 @@
 import LoginPage from "../pageobjects/loginpage.js";
 import UserHomePage from "../pageobjects/homePageUser.js";
-import logoutUser from "../pageobjects/logoutUser.js";
 
 describe('go to login user', () =>{
     beforeAll('open browser', () =>{
@@ -16,37 +15,37 @@ describe('go to login user', () =>{
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
     });
 
-    it('home page user', async () =>{
+    it ('home page explore', async () =>{
         await expect (UserHomePage.productsText).toBeDisplayed();
         await expect (UserHomePage.buttonBurguer).toBeDisplayed();
         await expect (UserHomePage.containerInventory).toBeDisplayed();
-        await expect (UserHomePage.productImage).toBeDisplayed();
-    });
-
-    it ('navigate in home page', async () => {
         await UserHomePage.productImageClick();
-        await UserHomePage.addButtonClick();
-        await UserHomePage.removeButtonClick();
         await UserHomePage.backProductsButtonClick();
-        await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
-        await UserHomePage.sortButtonClick();
-        await UserHomePage.sortButton2Click();
+        await expect (UserHomePage.containerInventory).toBeDisplayed();
+        await UserHomePage.addToCartJacketButtonClick();
     });
 
-    it('shopping user', async () =>{
-        await expect(UserHomePage.productImage).toBeDisplayed();
-        await UserHomePage.productImageClick();
-        await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory-item.html?id=4');
-        await UserHomePage.addButtonClick();
+    it('navigate and shopping', async () =>{
+        await UserHomePage.productImage2Click();
+        await expect (UserHomePage.productTshirt).toBeDisplayed();
+        await UserHomePage.addToCartButtonTshirtClick();
         await UserHomePage.addToCartButtonShoppingClick();
-        await expect(browser).toHaveUrl('https://www.saucedemo.com/cart.html');
-        await expect(UserHomePage.containDescription).toBeDisplayed();
+        await expect (UserHomePage.cartDescribeTshirt).toBeDisplayed();
+        await UserHomePage.continueShoppingButtonClick();
+        await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
+        await UserHomePage.addToCartOnesietButtonClick();
+    });
+
+    it ('checkout', async () =>{
+        await UserHomePage.addToCartButtonShoppingClick();
+        await expect (browser).toHaveUrl('https://www.saucedemo.com/cart.html')
+        await expect (UserHomePage.cartDescribeList).toBeDisplayed();
         await UserHomePage.checkoutButtonClick();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/checkout-step-one.html');
-    });
-
-    it('checkout user', async () =>{
         await expect (UserHomePage.tittleCheckout).toBeDisplayed();
+        await UserHomePage.continueButtonClick();
+        await expect (UserHomePage.alertErrorCheckout).toBeDisplayed();
+        await UserHomePage.alertErrorCheckoutButtonClick();
         await expect (UserHomePage.inputFirstName).toBeDisplayed();
         await expect (UserHomePage.inputLastName).toBeDisplayed();
         await expect (UserHomePage.inputpostalCode).toBeDisplayed();
@@ -62,16 +61,15 @@ describe('go to login user', () =>{
         await UserHomePage.finishButtonClick();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/checkout-complete.html');
         await expect (UserHomePage.finishtext).toBeDisplayed();
-    });
-
-    it ('back home', async () =>{
         await UserHomePage.backButtonClick();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
+        const footer = await $('#page_wrapper > footer');
+        await footer.scrollIntoView();
     });
 
-    it ('logout of user', async () =>{
-        await logoutUser.buttonBurguerClick();
-        await logoutUser.logOutButtonClick();
-        await expect(browser).toHaveUrl('https://www.saucedemo.com/');
+    it('navigate another window', async () =>{
+        await UserHomePage.twitterButtonClick();
+        await browser.newWindow('https://twitter.com/saucelabs');
+        await browser.closeWindow();
     });
 });
