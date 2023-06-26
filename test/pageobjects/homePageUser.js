@@ -15,6 +15,7 @@ class userHomePage {
 
     get addToCartButtonShopping (){
         return $('#shopping_cart_container > a');
+
     }
 
     get containerInventory(){
@@ -34,7 +35,7 @@ class userHomePage {
     }
 
     get productImage2 (){
-        return $('#item_5_img_link > img');
+        return $('#item_1_img_link');
     }
 
     get sortButton (){
@@ -47,6 +48,7 @@ class userHomePage {
 
     get addToCartButton (){
         return $('#add-to-cart-sauce-labs-backpack');
+
     }
 
     get removeButton (){
@@ -101,6 +103,30 @@ class userHomePage {
         return $('#back-to-products');
     }
 
+    get aboutButton(){
+        return $('#about_sidebar_link');
+    }
+
+    get productTshirt(){
+        return $('#inventory_item_container');
+    }
+
+    get addToCartButtonTshirt(){
+        return $('#add-to-cart-sauce-labs-bolt-t-shirt');
+    }
+
+    get cartDescribeTshirt(){
+        return $('#cart_contents_container > div > div.cart_list > div.cart_item');
+    }
+    
+    get continueShoppingButton(){
+        return $('#continue-shopping');
+    }
+
+    get scrollFooter(){
+        return $('#page_wrapper > footer');
+    }
+
     async checkoutForm (firstname, lastname, postalcode) {
         await this.inputFirstName.setValue(firstname);
         await this.inputLastName.setValue(lastname);
@@ -110,6 +136,11 @@ class userHomePage {
     async productImageClick(){
         await this.productImage.click();
     }
+
+    async productImage2Click(){
+        await this.productImage2.click();
+    }
+
     async addButtonClick() {
         await this.addToCartButton.click();
     }
@@ -151,6 +182,18 @@ class userHomePage {
 
     async backButtonClick() {
         await this.backButton.click();
+    }
+
+    async aboutButtonClick(){
+        await this.aboutButton.click();
+    }
+
+    async addToCartButtonTshirtClick(){
+        await this.addToCartButtonTshirt.click();
+    }
+
+    async continueShoppingButtonClick() {
+        await this.continueShoppingButton.click();
     }
 }
 

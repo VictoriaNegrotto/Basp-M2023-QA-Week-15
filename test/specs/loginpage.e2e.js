@@ -3,7 +3,7 @@ import userHomePage from "../pageobjects/homePageUser.js";
 import logoutUser from "../pageobjects/logoutUser.js";
 
 describe ('go to login user', () =>{
-    beforeAll('open browser',()=>{
+    beforeAll('open browser',() =>{
         browser.setWindowSize (1360, 768);
         browser.url("https://www.saucedemo.com/");
     });
