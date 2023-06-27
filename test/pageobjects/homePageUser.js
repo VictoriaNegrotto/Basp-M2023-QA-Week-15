@@ -46,6 +46,10 @@ class UserHomePage {
         return $('#header_container > div.header_secondary_container > div > span > select > option:nth-child(2)');
     }
 
+    get sortButton3 (){
+        return $('#header_container > div.header_secondary_container > div > span > select > option:nth-child(3)')
+    }
+
     get addToCartButton (){
         return $('#add-to-cart-sauce-labs-backpack');
 
@@ -151,6 +155,23 @@ class UserHomePage {
     get alertErrorCheckoutButton(){
         return $('#checkout_info_container > div > form > div.checkout_info > div.error-message-container.error > h3 > button');
     }
+
+    get alertErrorLogOut(){
+        return $('#login_button_container > div > form > div.error-message-container.error > h3');
+    }
+
+    get addToCartBikeButton(){
+        return $('#add-to-cart-sauce-labs-bike-light');
+    }
+
+    get removeBikeButton(){
+        return $('#remove-sauce-labs-bike-light');
+    }
+
+    get allItemsButton(){
+        return $('#inventory_sidebar_link');
+    }
+
     async checkoutForm (firstname, lastname, postalcode) {
         await this.inputFirstName.setValue(firstname);
         await this.inputLastName.setValue(lastname);
@@ -192,6 +213,10 @@ class UserHomePage {
         await this.sortButton2.click();
     }
 
+    async sortButton3Click(){
+        await this.sortButton3.click();
+    }
+
     async checkoutButtonClick() {
         await this.checkoutButton.click();
     }
@@ -230,6 +255,18 @@ class UserHomePage {
 
     async alertErrorCheckoutButtonClick(){
         await this.alertErrorCheckoutButton.click();
+    }
+
+    async addToCartBikeButtonClick(){
+        await this.addToCartBikeButton.click();
+    }
+
+    async removeBikeButtonClick(){
+        await this.removeBikeButton.click();
+    }
+
+    async allItemsButtonClick(){
+        await this.allItemsButton.click();
     }
 }
 

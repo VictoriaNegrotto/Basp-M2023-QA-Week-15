@@ -32,7 +32,8 @@ export const config = {
         './test/specs/homepage.e2e.js',
         './test/specs/loginfailed.e2e.js',
         './test/specs/loginpage.e2e.js',
-        //'./test/specs/new-e2e.js'
+        './test/specs/standaruser.e2e.js',
+        //'./test/specs/problemuser.e2e.js'
     ],
     //
     // ============
