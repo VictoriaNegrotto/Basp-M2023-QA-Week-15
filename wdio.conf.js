@@ -29,10 +29,10 @@ export const config = {
     ],
     // Patterns to exclude.
     exclude: [
-        './test/specs/homepage.e2e.js',
-        './test/specs/loginfailed.e2e.js',
-        './test/specs/loginpage.e2e.js',
-        './test/specs/standaruser.e2e.js',
+        //'./test/specs/homepage.e2e.js',
+        //'./test/specs/loginfailed.e2e.js',
+        //'./test/specs/loginpage.e2e.js',
+        //'./test/specs/standaruser.e2e.js',
         //'./test/specs/problemuser.e2e.js'
     ],
     //
@@ -60,7 +60,7 @@ export const config = {
     capabilities: [{
         // capabilities for local browser web tests
         browserName: 'chrome', 'goog:chromeOptions': {
-            //args: ['headless', 'disable-gpu']
+            args: ['headless', 'disable-gpu']
         } // or "firefox", "microsoftedge", "safari"
     }],
     //

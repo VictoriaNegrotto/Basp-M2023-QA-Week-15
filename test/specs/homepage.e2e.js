@@ -1,6 +1,6 @@
 import LoginPage from "../pageobjects/loginpage.js";
 import UserHomePage from "../pageobjects/homePageUser.js";
-import logoutUser from "../pageobjects/logoutUser.js";
+import LogoutUser from "../pageobjects/logoutUser.js";
 
 describe('go to login user', () =>{
     beforeAll('open browser', () =>{
@@ -70,8 +70,8 @@ describe('go to login user', () =>{
     });
 
     it ('logout of user', async () =>{
-        await logoutUser.buttonBurguerClick();
-        await logoutUser.logOutButtonClick();
+        await LogoutUser.buttonBurguerClick();
+        await LogoutUser.logOutButtonClick();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/');
     });
 });

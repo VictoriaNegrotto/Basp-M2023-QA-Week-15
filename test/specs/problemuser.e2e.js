@@ -54,8 +54,9 @@ describe ('go to login user', () =>{
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html');
     });
 
-    // it('logout', async () =>{
-
-    // });
-
+    it ('logout of user', async () =>{
+        await LogoutUser.buttonBurguerClick();
+        await LogoutUser.logOutButtonClick();
+        await expect(browser).toHaveUrl('https://www.saucedemo.com/');
+    });
 });

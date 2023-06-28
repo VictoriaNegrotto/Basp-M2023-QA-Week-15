@@ -1,7 +1,7 @@
 import LoginPage from "../pageobjects/loginpage.js";
 import UserHomePage from "../pageobjects/homePageUser.js";
 
-describe('go to login user', () =>{
+describe('go landing page user', () =>{
     beforeAll('open browser', () =>{
         browser.setWindowSize (1360, 768);
         browser.url("https://www.saucedemo.com/");
